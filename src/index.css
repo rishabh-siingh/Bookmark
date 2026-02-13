@@ -1,0 +1,458 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Material UI 3 Design Tokens - Water Blue Theme */
+:root {
+  /* Primary Palette - Soft Water Blue */
+  --md-sys-color-primary: #4A90D9;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #D3E5F7;
+  --md-sys-color-on-primary-container: #003258;
+  
+  /* Secondary Palette */
+  --md-sys-color-secondary: #5A7A96;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #D6E4F0;
+  --md-sys-color-on-secondary-container: #132A3C;
+  
+  /* Tertiary Palette */
+  --md-sys-color-tertiary: #6B8FA8;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #D5E8F2;
+  --md-sys-color-on-tertiary-container: #1A333D;
+  
+  /* Error Palette */
+  --md-sys-color-error: #B3261E;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #F9DEDC;
+  --md-sys-color-on-error-container: #410E0B;
+  
+  /* Surface Colors - Light Theme */
+  --md-sys-color-surface: #F8FAFC;
+  --md-sys-color-surface-dim: #D8DADF;
+  --md-sys-color-surface-bright: #F8FAFC;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F1F5F9;
+  --md-sys-color-surface-container: #E8EEF4;
+  --md-sys-color-surface-container-high: #E2E8F0;
+  --md-sys-color-surface-container-highest: #DEE4EC;
+  --md-sys-color-on-surface: #1A1C1E;
+  --md-sys-color-on-surface-variant: #43474E;
+  
+  /* Outline Colors */
+  --md-sys-color-outline: #73777F;
+  --md-sys-color-outline-variant: #C3C7CF;
+  
+  /* Inverse Colors */
+  --md-sys-color-inverse-surface: #2F3033;
+  --md-sys-color-inverse-on-surface: #F1F0F4;
+  --md-sys-color-inverse-primary: #A0C9F8;
+  
+  /* Shadow */
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  
+  /* Surface Tint */
+  --md-sys-color-surface-tint: #4A90D9;
+  
+  /* Custom Accent Colors */
+  --md-sys-color-success: #2E7D32;
+  --md-sys-color-warning: #ED6C02;
+  --md-sys-color-info: #0288D1;
+  
+  /* Elevation Shadows */
+  --md-sys-elevation-level0: 0px 0px 0px 0px rgba(0,0,0,0);
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0,0,0,0.08), 0px 1px 3px 1px rgba(0,0,0,0.04);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0,0,0,0.08), 0px 2px 6px 2px rgba(0,0,0,0.04);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0,0,0,0.08), 0px 4px 8px 3px rgba(0,0,0,0.04);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0,0,0,0.08), 0px 6px 10px 4px rgba(0,0,0,0.04);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0,0,0,0.08), 0px 8px 12px 6px rgba(0,0,0,0.04);
+  
+  /* Shape - Rounded corners per Material UI 3 */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 50%;
+  
+  /* Typography Scale - Material UI 3 */
+  --md-sys-typescale-display-large-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-display-large-font-size: 57px;
+  --md-sys-typescale-display-large-line-height: 64px;
+  --md-sys-typescale-display-large-letter-spacing: -0.25px;
+  --md-sys-typescale-display-large-font-weight: 400;
+  
+  --md-sys-typescale-display-medium-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-display-medium-font-size: 45px;
+  --md-sys-typescale-display-medium-line-height: 52px;
+  --md-sys-typescale-display-medium-letter-spacing: 0px;
+  --md-sys-typescale-display-medium-font-weight: 400;
+  
+  --md-sys-typescale-display-small-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-display-small-font-size: 36px;
+  --md-sys-typescale-display-small-line-height: 44px;
+  --md-sys-typescale-display-small-letter-spacing: 0px;
+  --md-sys-typescale-display-small-font-weight: 400;
+  
+  --md-sys-typescale-headline-large-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-headline-large-font-size: 32px;
+  --md-sys-typescale-headline-large-line-height: 40px;
+  --md-sys-typescale-headline-large-letter-spacing: 0px;
+  --md-sys-typescale-headline-large-font-weight: 400;
+  
+  --md-sys-typescale-headline-medium-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-headline-medium-font-size: 28px;
+  --md-sys-typescale-headline-medium-line-height: 36px;
+  --md-sys-typescale-headline-medium-letter-spacing: 0px;
+  --md-sys-typescale-headline-medium-font-weight: 400;
+  
+  --md-sys-typescale-headline-small-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-headline-small-font-size: 24px;
+  --md-sys-typescale-headline-small-line-height: 32px;
+  --md-sys-typescale-headline-small-letter-spacing: 0px;
+  --md-sys-typescale-headline-small-font-weight: 400;
+  
+  --md-sys-typescale-title-large-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-title-large-font-size: 22px;
+  --md-sys-typescale-title-large-line-height: 28px;
+  --md-sys-typescale-title-large-letter-spacing: 0px;
+  --md-sys-typescale-title-large-font-weight: 400;
+  
+  --md-sys-typescale-title-medium-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-title-medium-font-size: 16px;
+  --md-sys-typescale-title-medium-line-height: 24px;
+  --md-sys-typescale-title-medium-letter-spacing: 0.15px;
+  --md-sys-typescale-title-medium-font-weight: 500;
+  
+  --md-sys-typescale-title-small-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-title-small-font-size: 14px;
+  --md-sys-typescale-title-small-line-height: 20px;
+  --md-sys-typescale-title-small-letter-spacing: 0.1px;
+  --md-sys-typescale-title-small-font-weight: 500;
+  
+  --md-sys-typescale-body-large-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-body-large-font-size: 16px;
+  --md-sys-typescale-body-large-line-height: 24px;
+  --md-sys-typescale-body-large-letter-spacing: 0.5px;
+  --md-sys-typescale-body-large-font-weight: 400;
+  
+  --md-sys-typescale-body-medium-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-body-medium-font-size: 14px;
+  --md-sys-typescale-body-medium-line-height: 20px;
+  --md-sys-typescale-body-medium-letter-spacing: 0.25px;
+  --md-sys-typescale-body-medium-font-weight: 400;
+  
+  --md-sys-typescale-body-small-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-body-small-font-size: 12px;
+  --md-sys-typescale-body-small-line-height: 16px;
+  --md-sys-typescale-body-small-letter-spacing: 0.4px;
+  --md-sys-typescale-body-small-font-weight: 400;
+  
+  --md-sys-typescale-label-large-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-label-large-font-size: 14px;
+  --md-sys-typescale-label-large-line-height: 20px;
+  --md-sys-typescale-label-large-letter-spacing: 0.1px;
+  --md-sys-typescale-label-large-font-weight: 500;
+  
+  --md-sys-typescale-label-medium-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-label-medium-font-size: 12px;
+  --md-sys-typescale-label-medium-line-height: 16px;
+  --md-sys-typescale-label-medium-letter-spacing: 0.5px;
+  --md-sys-typescale-label-medium-font-weight: 500;
+  
+  --md-sys-typescale-label-small-font-family: 'Roboto', system-ui, sans-serif;
+  --md-sys-typescale-label-small-font-size: 11px;
+  --md-sys-typescale-label-small-line-height: 16px;
+  --md-sys-typescale-label-small-letter-spacing: 0.5px;
+  --md-sys-typescale-label-small-font-weight: 500;
+  
+  /* Motion */
+  --md-sys-motion-duration-short1: 50ms;
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short3: 150ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium3: 350ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long1: 450ms;
+  --md-sys-motion-duration-long2: 500ms;
+  --md-sys-motion-duration-long3: 550ms;
+  --md-sys-motion-duration-long4: 600ms;
+  --md-sys-motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+}
+
+/* Dark Theme - Softer Water Blue */
+.dark {
+  /* Primary Palette - Soft Water Blue Dark */
+  --md-sys-color-primary: #A0C9F8;
+  --md-sys-color-on-primary: #003258;
+  --md-sys-color-primary-container: #00497D;
+  --md-sys-color-on-primary-container: #D3E5F7;
+  
+  /* Secondary Palette */
+  --md-sys-color-secondary: #A8C8E1;
+  --md-sys-color-on-secondary: #0D3448;
+  --md-sys-color-secondary-container: #274B5F;
+  --md-sys-color-on-secondary-container: #D6E4F0;
+  
+  /* Tertiary Palette */
+  --md-sys-color-tertiary: #B0D4E5;
+  --md-sys-color-on-tertiary: #1A3A4A;
+  --md-sys-color-tertiary-container: #2F4F5F;
+  --md-sys-color-on-tertiary-container: #D5E8F2;
+  
+  /* Error Palette */
+  --md-sys-color-error: #F2B8B5;
+  --md-sys-color-on-error: #601410;
+  --md-sys-color-error-container: #8C1D18;
+  --md-sys-color-on-error-container: #F9DEDC;
+  
+  /* Surface Colors - Dark Theme */
+  --md-sys-color-surface: #121418;
+  --md-sys-color-surface-dim: #121418;
+  --md-sys-color-surface-bright: #38393C;
+  --md-sys-color-surface-container-lowest: #0D0F12;
+  --md-sys-color-surface-container-low: #1A1C1E;
+  --md-sys-color-surface-container: #1E2022;
+  --md-sys-color-surface-container-high: #282A2D;
+  --md-sys-color-surface-container-highest: #333538;
+  --md-sys-color-on-surface: #E2E2E6;
+  --md-sys-color-on-surface-variant: #C3C7CF;
+  
+  /* Outline Colors */
+  --md-sys-color-outline: #8E9199;
+  --md-sys-color-outline-variant: #43474E;
+  
+  /* Inverse Colors */
+  --md-sys-color-inverse-surface: #E2E2E6;
+  --md-sys-color-inverse-on-surface: #2F3033;
+  --md-sys-color-inverse-primary: #4A90D9;
+  
+  /* Shadow */
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  
+  /* Surface Tint */
+  --md-sys-color-surface-tint: #A0C9F8;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  min-height: 100vh;
+  overflow: hidden;
+  transition: background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+              color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+/* Typography Classes */
+.md-display-large {
+  font-family: var(--md-sys-typescale-display-large-font-family);
+  font-size: var(--md-sys-typescale-display-large-font-size);
+  line-height: var(--md-sys-typescale-display-large-line-height);
+  letter-spacing: var(--md-sys-typescale-display-large-letter-spacing);
+  font-weight: var(--md-sys-typescale-display-large-font-weight);
+}
+
+.md-display-medium {
+  font-family: var(--md-sys-typescale-display-medium-font-family);
+  font-size: var(--md-sys-typescale-display-medium-font-size);
+  line-height: var(--md-sys-typescale-display-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-display-medium-letter-spacing);
+  font-weight: var(--md-sys-typescale-display-medium-font-weight);
+}
+
+.md-display-small {
+  font-family: var(--md-sys-typescale-display-small-font-family);
+  font-size: var(--md-sys-typescale-display-small-font-size);
+  line-height: var(--md-sys-typescale-display-small-line-height);
+  letter-spacing: var(--md-sys-typescale-display-small-letter-spacing);
+  font-weight: var(--md-sys-typescale-display-small-font-weight);
+}
+
+.md-headline-large {
+  font-family: var(--md-sys-typescale-headline-large-font-family);
+  font-size: var(--md-sys-typescale-headline-large-font-size);
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-large-letter-spacing);
+  font-weight: var(--md-sys-typescale-headline-large-font-weight);
+}
+
+.md-headline-medium {
+  font-family: var(--md-sys-typescale-headline-medium-font-family);
+  font-size: var(--md-sys-typescale-headline-medium-font-size);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-medium-letter-spacing);
+  font-weight: var(--md-sys-typescale-headline-medium-font-weight);
+}
+
+.md-headline-small {
+  font-family: var(--md-sys-typescale-headline-small-font-family);
+  font-size: var(--md-sys-typescale-headline-small-font-size);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-small-letter-spacing);
+  font-weight: var(--md-sys-typescale-headline-small-font-weight);
+}
+
+.md-title-large {
+  font-family: var(--md-sys-typescale-title-large-font-family);
+  font-size: var(--md-sys-typescale-title-large-font-size);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  letter-spacing: var(--md-sys-typescale-title-large-letter-spacing);
+  font-weight: var(--md-sys-typescale-title-large-font-weight);
+}
+
+.md-title-medium {
+  font-family: var(--md-sys-typescale-title-medium-font-family);
+  font-size: var(--md-sys-typescale-title-medium-font-size);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-title-medium-letter-spacing);
+  font-weight: var(--md-sys-typescale-title-medium-font-weight);
+}
+
+.md-title-small {
+  font-family: var(--md-sys-typescale-title-small-font-family);
+  font-size: var(--md-sys-typescale-title-small-font-size);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-letter-spacing);
+  font-weight: var(--md-sys-typescale-title-small-font-weight);
+}
+
+.md-body-large {
+  font-family: var(--md-sys-typescale-body-large-font-family);
+  font-size: var(--md-sys-typescale-body-large-font-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  letter-spacing: var(--md-sys-typescale-body-large-letter-spacing);
+  font-weight: var(--md-sys-typescale-body-large-font-weight);
+}
+
+.md-body-medium {
+  font-family: var(--md-sys-typescale-body-medium-font-family);
+  font-size: var(--md-sys-typescale-body-medium-font-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-letter-spacing);
+  font-weight: var(--md-sys-typescale-body-medium-font-weight);
+}
+
+.md-body-small {
+  font-family: var(--md-sys-typescale-body-small-font-family);
+  font-size: var(--md-sys-typescale-body-small-font-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-letter-spacing);
+  font-weight: var(--md-sys-typescale-body-small-font-weight);
+}
+
+.md-label-large {
+  font-family: var(--md-sys-typescale-label-large-font-family);
+  font-size: var(--md-sys-typescale-label-large-font-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-letter-spacing);
+  font-weight: var(--md-sys-typescale-label-large-font-weight);
+}
+
+.md-label-medium {
+  font-family: var(--md-sys-typescale-label-medium-font-family);
+  font-size: var(--md-sys-typescale-label-medium-font-size);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-letter-spacing);
+  font-weight: var(--md-sys-typescale-label-medium-font-weight);
+}
+
+.md-label-small {
+  font-family: var(--md-sys-typescale-label-small-font-family);
+  font-size: var(--md-sys-typescale-label-small-font-size);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  letter-spacing: var(--md-sys-typescale-label-small-letter-spacing);
+  font-weight: var(--md-sys-typescale-label-small-font-weight);
+}
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline-variant);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-outline);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --md-sys-color-outline: #000000;
+    --md-sys-color-outline-variant: #000000;
+  }
+  
+  .dark {
+    --md-sys-color-outline: #FFFFFF;
+    --md-sys-color-outline-variant: #FFFFFF;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
