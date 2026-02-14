@@ -49,3 +49,9 @@ export default function SearchBar({ active }: SearchBarProps) {
     </div>
   );
 }
+
+// Ensure 'All' filter works
+const filteredItems = items.filter(item => {
+  if (filter === 'All') return true;
+  return item.type === filter;
+});

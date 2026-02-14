@@ -148,9 +148,9 @@ export default function FileList({}: FileListProps) {
       : FolderOpen;
 
     return (
-      <div className="folder-icon-container">
-        <Folder className="folder-bg-icon" size={40} />
-        <div className="folder-overlay">
+      <div className="pl-4 "folder-icon-container">
+        <Folder className="pl-4 "folder-bg-icon" size={40} />
+        <div className="pl-4 "folder-overlay">
           <IconComponent size={16} />
         </div>
       </div>
@@ -161,19 +161,19 @@ export default function FileList({}: FileListProps) {
     const faviconUrl = getFaviconUrl(bookmark.url);
     
     return (
-      <div className="bookmark-icon-container">
+      <div className="pl-4 "bookmark-icon-container">
         {faviconUrl ? (
           <img 
             src={faviconUrl} 
             alt="" 
-            className="bookmark-favicon"
+            className="pl-4 "bookmark-favicon"
             loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = 'none';
             }}
           />
         ) : (
-          <Globe size={24} className="bookmark-fallback-icon" />
+          <Globe size={24} className="pl-4 "bookmark-fallback-icon" />
         )}
       </div>
     );
@@ -189,7 +189,7 @@ export default function FileList({}: FileListProps) {
     return (
       <div
         key={item.id}
-        className={cn(
+        className="pl-4 {cn(
           'file-item',
           isSelected && 'selected'
         )}
@@ -211,7 +211,7 @@ export default function FileList({}: FileListProps) {
       >
         {/* Icon Area */}
         <button
-          className={cn(
+          className="pl-4 {cn(
             'item-icon-area',
             isSelected && 'selected'
           )}
@@ -226,21 +226,21 @@ export default function FileList({}: FileListProps) {
         </button>
 
         {/* Content Area */}
-        <div className="item-content">
-          <span className="md-body-large item-name">{item.name}</span>
-          <span className="md-body-small item-subtitle" title={subtitle}>
+        <div className="pl-4 "item-content">
+          <span className="pl-4 "md-body-large item-name">{item.name}</span>
+          <span className="pl-4 "md-body-small item-subtitle" title={subtitle}>
             {subtitle}
           </span>
         </div>
 
         {/* Date */}
-        <span className="md-label-small item-date">{item.date}</span>
+        <span className="pl-4 "md-label-small item-date">{item.date}</span>
 
         {/* Actions */}
         <Button
           variant="ghost"
           size="icon"
-          className="item-actions-btn"
+          className="pl-4 "item-actions-btn"
           onClick={(e) => {
             e.stopPropagation();
             setContextMenuItem(item);
@@ -259,7 +259,7 @@ export default function FileList({}: FileListProps) {
   return (
     <div 
       ref={listRef}
-      className="file-list"
+      className="pl-4 "file-list"
       role="list"
       aria-label="File list"
       aria-multiselectable="true"
@@ -267,7 +267,7 @@ export default function FileList({}: FileListProps) {
       {/* Up/Back Item */}
       {showUpItem && (
         <div
-          className="file-item up-item"
+          className="pl-4 "file-item up-item"
           onClick={navigateUp}
           role="listitem"
           aria-label="Go to parent folder"
@@ -279,17 +279,17 @@ export default function FileList({}: FileListProps) {
             }
           }}
         >
-          <div className="item-icon-area">
-            <div className="folder-icon-container up">
-              <Folder className="folder-bg-icon" size={40} />
-              <div className="folder-overlay up-overlay">
+          <div className="pl-4 "item-icon-area">
+            <div className="pl-4 "folder-icon-container up">
+              <Folder className="pl-4 "folder-bg-icon" size={40} />
+              <div className="pl-4 "folder-overlay up-overlay">
                 <ArrowUp size={16} />
               </div>
             </div>
           </div>
-          <div className="item-content">
-            <span className="md-body-large item-name">..</span>
-            <span className="md-body-small item-subtitle">Parent folder</span>
+          <div className="pl-4 "item-content">
+            <span className="pl-4 "md-body-large item-name">..</span>
+            <span className="pl-4 "md-body-small item-subtitle">Parent folder</span>
           </div>
         </div>
       )}
@@ -299,12 +299,12 @@ export default function FileList({}: FileListProps) {
 
       {/* Empty State */}
       {currentItems.length === 0 && (
-        <div className="empty-state" role="status" aria-live="polite">
-          <Folder className="empty-icon" size={48} />
-          <p className="md-body-large empty-title">
+        <div className="pl-4 "empty-state" role="status" aria-live="polite">
+          <Folder className="pl-4 "empty-icon" size={48} />
+          <p className="pl-4 "md-body-large empty-title">
             {searchQuery ? 'No results found' : 'This folder is empty'}
           </p>
-          <p className="md-body-medium empty-subtitle">
+          <p className="pl-4 "md-body-medium empty-subtitle">
             {searchQuery 
               ? 'Try adjusting your search terms'
               : 'Create a new folder or bookmark to get started'

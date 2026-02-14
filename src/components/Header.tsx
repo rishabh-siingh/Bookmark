@@ -89,7 +89,7 @@ export default function Header({
   };
 
   const path = currentFolderId === 'root' ? [] : getPath(currentFolderId);
-  const displayTitle = currentFolder?.name || 'Bookmark Pro';
+  const displayTitle = currentFolder?.name || '<span className="text-2xl font-bold">Bookmark Pro</span>';
 
   const sortOptions: { mode: SortMode; label: string; icon: React.ElementType }[] = [
     { mode: 'sort-by-name', label: 'Name', icon: ArrowUpAZ },
@@ -102,7 +102,7 @@ export default function Header({
     <header 
       className="header"
       role="banner"
-      aria-label="Bookmark Pro Header"
+      aria-label="<span className="text-2xl font-bold">Bookmark Pro</span> Header"
     >
       <div className="header-content">
         {/* Left Section - Logo and Title */}
