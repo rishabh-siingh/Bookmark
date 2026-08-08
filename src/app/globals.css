@@ -1,0 +1,405 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   MATERIAL 3 EXPRESSIVE — DESIGN TOKENS
+   Seed: Violet #6750A4 (M3 baseline purple, brand-aligned)
+   Palettes derived per M3 HCT tonal-role spec: Primary, Secondary, Tertiary,
+   Neutral, Neutral Variant, Error — each with tones 0–100.
+   ========================================================================== */
+
+@theme {
+  --font-sans: "Google Sans Text", "Roboto Flex", "Inter", system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Google Sans", "Roboto Flex", "Inter", system-ui,
+    sans-serif;
+
+  /* ---- M3 Shape scale (Expressive uses varied, generous radii) ---- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 999px;
+
+  /* ---- M3 Motion — expressive spring-ish easing ---- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.3, 0, 0.1, 1);
+  --ease-emphasized-decel: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================================================
+   TONAL PALETTES (source-of-truth custom properties, theme-independent)
+   ========================================================================== */
+:root {
+  /* Primary — Violet */
+  --p0: #000000;   --p10: #21005d;  --p20: #381e72;  --p30: #4f378b;
+  --p40: #6750a4;  --p50: #7f67be;  --p60: #9a82db;  --p70: #b69df8;
+  --p80: #d0bcff;  --p90: #eaddff;  --p95: #f6edff;  --p99: #fffbfe; --p100: #ffffff;
+
+  /* Secondary — muted violet-grey */
+  --s0: #000000;   --s10: #1d192b;  --s20: #332d41;  --s30: #4a4458;
+  --s40: #625b71;  --s50: #7a7289;  --s60: #958da5;  --s70: #b0a7c0;
+  --s80: #ccc2dc;  --s90: #e8def8;  --s95: #f6edff;  --s99: #fffbfe; --s100: #ffffff;
+
+  /* Tertiary — warm amber-rose (bookmark accent) */
+  --t0: #000000;   --t10: #31101d;  --t20: #4e2635;  --t30: #663c4c;
+  --t40: #7d5260;  --t50: #9c6b78;  --t60: #b58392;  --t70: #d29dac;
+  --t80: #efb8c8;  --t90: #ffd8e4;  --t95: #ffecf1;  --t99: #fffbfa; --t100: #ffffff;
+
+  /* Error */
+  --e0: #000000;   --e10: #410002;  --e20: #690005;  --e30: #93000a;
+  --e40: #ba1a1a;  --e50: #de3730;  --e60: #ff5449;  --e70: #ff897d;
+  --e80: #ffb4ab;  --e90: #ffdad6;  --e95: #ffedea;  --e99: #fffbff; --e100: #ffffff;
+
+  /* Neutral */
+  --n0: #000000;   --n4: #0f0d13;   --n6: #141218;   --n10: #1d1b20;
+  --n12: #211f26;  --n17: #2b2930;  --n20: #322f35;  --n22: #36343b;
+  --n24: #3b383e;  --n30: #48464c;  --n40: #605d64;  --n50: #79767d;
+  --n60: #939094;  --n70: #aeaaae;  --n80: #cac5ca;  --n87: #ded8e1;
+  --n90: #e6e0e9;  --n92: #ece6f0;  --n94: #f3edf7;  --n95: #f5eff7;
+  --n96: #f7f2fa;  --n98: #fef7ff;  --n99: #fffbff;  --n100: #ffffff;
+
+  /* Neutral variant */
+  --nv30: #49454f; --nv50: #79747e; --nv60: #938f99; --nv80: #cac4d0;
+  --nv90: #e7e0ec; --nv95: #f5eefa;
+}
+
+/* ==========================================================================
+   LIGHT SCHEME (default)
+   ========================================================================== */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --md-primary: var(--p40);
+  --md-on-primary: var(--p100);
+  --md-primary-container: var(--p90);
+  --md-on-primary-container: var(--p10);
+
+  --md-secondary: var(--s40);
+  --md-on-secondary: var(--s100);
+  --md-secondary-container: var(--s90);
+  --md-on-secondary-container: var(--s10);
+
+  --md-tertiary: var(--t40);
+  --md-on-tertiary: var(--t100);
+  --md-tertiary-container: var(--t90);
+  --md-on-tertiary-container: var(--t10);
+
+  --md-error: var(--e40);
+  --md-on-error: var(--e100);
+  --md-error-container: var(--e90);
+  --md-on-error-container: var(--e10);
+
+  --md-background: var(--n98);
+  --md-on-background: var(--n10);
+
+  --md-surface: var(--n98);
+  --md-on-surface: var(--n10);
+  --md-surface-variant: var(--nv90);
+  --md-on-surface-variant: var(--nv30);
+
+  --md-surface-dim: #ded8e0;
+  --md-surface-bright: var(--n98);
+  --md-surface-container-lowest: var(--n100);
+  --md-surface-container-low: #f7f2fa;
+  --md-surface-container: #f1ecf4;
+  --md-surface-container-high: #ece6ee;
+  --md-surface-container-highest: #e6e0e9;
+
+  --md-outline: var(--nv50);
+  --md-outline-variant: var(--nv80);
+
+  --md-inverse-surface: var(--n20);
+  --md-inverse-on-surface: var(--n95);
+  --md-inverse-primary: var(--p80);
+
+  --md-shadow: #000000;
+  --md-scrim: #000000;
+
+  --md-success: #1e6b3f;
+  --md-on-success-container: #003917;
+  --md-success-container: #a8f5b8;
+}
+
+/* ==========================================================================
+   DARK SCHEME
+   ========================================================================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --md-primary: var(--p80);
+  --md-on-primary: var(--p20);
+  --md-primary-container: var(--p30);
+  --md-on-primary-container: var(--p90);
+
+  --md-secondary: var(--s80);
+  --md-on-secondary: var(--s20);
+  --md-secondary-container: var(--s30);
+  --md-on-secondary-container: var(--s90);
+
+  --md-tertiary: var(--t80);
+  --md-on-tertiary: var(--t20);
+  --md-tertiary-container: var(--t30);
+  --md-on-tertiary-container: var(--t90);
+
+  --md-error: var(--e80);
+  --md-on-error: var(--e20);
+  --md-error-container: var(--e30);
+  --md-on-error-container: var(--e90);
+
+  --md-background: var(--n6);
+  --md-on-background: var(--n90);
+
+  --md-surface: var(--n6);
+  --md-on-surface: var(--n90);
+  --md-surface-variant: var(--nv30);
+  --md-on-surface-variant: var(--nv80);
+
+  --md-surface-dim: var(--n6);
+  --md-surface-bright: #3b383e;
+  --md-surface-container-lowest: var(--n4);
+  --md-surface-container-low: var(--n10);
+  --md-surface-container: #211f26;
+  --md-surface-container-high: #2b2930;
+  --md-surface-container-highest: #36343b;
+
+  --md-outline: var(--nv60);
+  --md-outline-variant: var(--nv30);
+
+  --md-inverse-surface: var(--n90);
+  --md-inverse-on-surface: var(--n20);
+  --md-inverse-primary: var(--p40);
+
+  --md-shadow: #000000;
+  --md-scrim: #000000;
+
+  --md-success: #8cd9a0;
+  --md-on-success-container: #a8f5b8;
+  --md-success-container: #0a4020;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--md-background);
+  color: var(--md-on-background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+  transition: background-color 0.3s var(--ease-standard), color 0.3s var(--ease-standard);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Kill native browser chrome on form controls — we render our own focus
+   ring (via the .focus-within/ring utilities on each field's wrapper), so
+   the browser's default outline/highlight would otherwise double up and
+   look like two overlapping borders. Buttons keep the shared
+   :focus-visible ring below for keyboard accessibility. */
+input,
+textarea,
+select {
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+::selection {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--md-outline-variant);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* M3 focus ring: 3px primary outline w/ offset, meets WCAG 2.2 focus visibility.
+   Excludes text inputs — those get their own focus treatment (a ring on the
+   field's rounded wrapper) so the two don't stack into a double border. */
+:focus-visible {
+  outline: 3px solid var(--md-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+/* Typography scale — M3 type roles used across components via utility classes */
+.type-display-lg { font-size: 2.8125rem; line-height: 3.25rem; font-weight: 700; letter-spacing: -0.02em; }
+.type-display-md { font-size: 2.25rem; line-height: 2.75rem; font-weight: 700; letter-spacing: -0.015em; }
+.type-headline-lg { font-size: 2rem; line-height: 2.5rem; font-weight: 700; letter-spacing: -0.01em; }
+.type-headline-sm { font-size: 1.5rem; line-height: 2rem; font-weight: 700; letter-spacing: -0.005em; }
+.type-title-lg { font-size: 1.375rem; line-height: 1.75rem; font-weight: 600; }
+.type-title-md { font-size: 1rem; line-height: 1.5rem; font-weight: 600; letter-spacing: 0.009em; }
+.type-title-sm { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; letter-spacing: 0.006em; }
+.type-body-lg { font-size: 1rem; line-height: 1.5rem; font-weight: 400; letter-spacing: 0.03em; }
+.type-body-md { font-size: 0.875rem; line-height: 1.25rem; font-weight: 400; letter-spacing: 0.017em; }
+.type-body-sm { font-size: 0.75rem; line-height: 1rem; font-weight: 400; letter-spacing: 0.033em; }
+.type-label-lg { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; letter-spacing: 0.007em; }
+.type-label-md { font-size: 0.75rem; line-height: 1rem; font-weight: 600; letter-spacing: 0.033em; }
+.type-label-sm { font-size: 0.6875rem; line-height: 1rem; font-weight: 600; letter-spacing: 0.045em; }
+
+/* ==========================================================================
+   GOLDEN RATIO SCALE (φ = 1.618) — used for the side-menu / expressive
+   surfaces where a deliberate, harmonic rhythm is wanted for spacing and
+   type, layered on top of the M3 roles above.
+   Base unit: 1rem (16px). Steps: base × φ^n
+   φ⁻² ≈ 0.382 · φ⁻¹ ≈ 0.618 · φ⁰ = 1 · φ¹ ≈ 1.618 · φ² ≈ 2.618 · φ³ ≈ 4.236
+   ========================================================================== */
+:root {
+  --phi-1: 0.382rem;  /* 6px  — micro gaps */
+  --phi-2: 0.618rem;  /* 10px — tight spacing */
+  --phi-3: 1rem;      /* 16px — base unit */
+  --phi-4: 1.618rem;  /* 26px — section spacing */
+  --phi-5: 2.618rem;  /* 42px — major spacing */
+  --phi-6: 4.236rem;  /* 68px — panel-level spacing */
+
+  --phi-text-xs: 0.618rem;   /* 9.9px  */
+  --phi-text-sm: 0.764rem;   /* 12.2px */
+  --phi-text-base: 1rem;     /* 16px   */
+  --phi-text-lg: 1.272rem;   /* 20.3px */
+  --phi-text-xl: 1.618rem;   /* 25.9px */
+  --phi-text-2xl: 2.618rem;  /* 41.9px */
+}
+
+/* ==========================================================================
+   MOTION KEYFRAMES — M3 Expressive: emphasized-decelerate entrances
+   ========================================================================== */
+@keyframes m3-rise {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-rise {
+  animation: m3-rise 0.4s var(--ease-emphasized-decel) both;
+}
+
+@keyframes m3-pop {
+  0% { opacity: 0; transform: scale(0.7); }
+  60% { opacity: 1; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-pop {
+  animation: m3-pop 0.38s var(--ease-spring) both;
+}
+
+@keyframes m3-scrim-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-scrim {
+  animation: m3-scrim-in 0.25s var(--ease-standard) both;
+}
+
+@keyframes m3-sheet-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-sheet {
+  animation: m3-sheet-up 0.35s var(--ease-emphasized-decel) both;
+}
+
+/* ==========================================================================
+   SCALING HAMBURGER NAVIGATION
+   The nav panel grows directly out of its trigger button: it's pinned to
+   the same top-right point as the hamburger and scales up from 0 → 1 with
+   its transform-origin anchored to that corner, so the button visually
+   "becomes" the menu instead of a separate panel appearing elsewhere.
+   Pure CSS transform + opacity — no JS animation driving it.
+   ========================================================================== */
+@keyframes scale-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scale-menu-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+.scale-menu {
+  transform-origin: top right;
+  animation: scale-menu-in 0.28s var(--ease-emphasized-decel) both;
+}
+.scale-menu[data-closing="true"] {
+  animation: scale-menu-out 0.18s var(--ease-standard) both;
+}
+
+/* State-layer helper — M3's hover/focus/press overlay convention */
+.state-layer {
+  position: relative;
+  isolation: isolate;
+}
+.state-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.15s var(--ease-standard);
+  pointer-events: none;
+}
+.state-layer:hover::after {
+  opacity: 0.08;
+}
+.state-layer:active::after {
+  opacity: 0.12;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
